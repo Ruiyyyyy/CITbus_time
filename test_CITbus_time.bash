@@ -29,7 +29,7 @@ fi
 
 # テスト3: ジャストの時刻
 out=$(echo -e "$timetable" | ./CITbus_time 10:00)
-expected="10:00 (あと 0分)"
+expected="10:00 (あと 0 分)"
 
 if [ "$out" = "$expected" ]; then
     echo "Test 3 OK: Handled exact time match"
