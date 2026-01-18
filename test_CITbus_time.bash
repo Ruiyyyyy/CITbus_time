@@ -7,7 +7,7 @@ timetable="09:00\n10:00\n10:30\n11:00\n12:00"
 
 # テスト1: 正常系
 out=$(echo -e "$timetable" | ./CITbus_time 10:15)
-expected="10:30 (Wait: 15 min)"
+expected="10:30 (あと 15 min)"
 
 if [ "$out" = "$expected" ]; then
     echo "Test 1 OK: Found next bus correctly"
