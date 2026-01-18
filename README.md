@@ -24,14 +24,14 @@ $ chmod +x CITbus_time
 標準入力から時刻データを入れると現在時刻から最も近い次の便を表示します。
 
 ```bash
-$ cat tsudanuma_bus.txt | ./CITbus_time
+$ cat tudanuma_bus.txt | ./CITbus_time
 10:35 (あと 15 分)
 ```
 
 引数に時刻(HH:MM)を指定するとその時刻から最も近い次の便を表示します。
 
 ```bash
-$ cat tsudanuma_bus.txt | ./CITbus_time 10:00
+$ cat tudanuma_bus.txt | ./CITbus_time 10:00
 10:35 (あと 35 分)
 ```
 
