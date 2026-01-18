@@ -1,5 +1,5 @@
 #!/bin/bash
-# SPDX-FileCopyrightText: 2025 Ryu Taniguchi
+# SPDX-FileCopyrightText: 2026 Ryu Taniguchi
 # SPDX-License-Identifier: BSD-3-Clause
 
 # テスト入力用のダミー時刻表データ
