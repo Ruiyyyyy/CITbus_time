@@ -33,7 +33,11 @@ $ cat tsudanuma_bus.txt | ./CITbus_time
 ```bash
 $ cat tsudanuma_bus.txt | ./CITbus_time 10:00
 10:35 (あと 35 分)
+```
 
+- このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許
+可されます．
+- © 2025 Ryu Taniguchi
 ## 必要な環境
 *Linux環境
 Python 3.7+
