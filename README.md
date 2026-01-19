@@ -58,7 +58,7 @@ $ echo innarasino_bus.txt | ./CITbus_time 10:00
 ## 必要な環境
 * Linux環境 Ubuntu24.04LTS
 * Python 3.7+
-* Python 3.10+
+
 ## ライセンス
 - このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許
 可されます．
