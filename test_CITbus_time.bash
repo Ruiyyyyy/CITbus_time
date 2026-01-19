@@ -1,41 +1,28 @@
-#!/bin/bash
+#!/bin/bash -xv
 # SPDX-FileCopyrightText: 2026 Ryu Taniguchi
 # SPDX-License-Identifier: BSD-3-Clause
 
-# テスト入力用のダミー時刻表データ
+ng () {
+    echo ${1}行目が違うよ
+    res=1
+}
+
+res=0
+
 timetable="09:00\n10:00\n10:30\n11:00\n12:00"
 
-# テスト1: 正常系
+### NORMAL TEST ###
 out=$(echo -e "$timetable" | ./CITbus_time 10:15)
-expected="10:30 (あと 15 分)"
+[ "${out}" = "10:30 (あと 15 分)" ] || ng "$LINENO"
 
-if [ "$out" = "$expected" ]; then
-    echo "Test 1 OK: Found next bus correctly"
-else
-    echo "Test 1 ERROR: Expected '$expected' but got '$out'"
-    exit 1
-fi
-
-# テスト2: 最終バス後
+### END OF SERVICE TEST ###
 out=$(echo -e "$timetable" | ./CITbus_time 13:00)
-expected="本日の便は終了しました"
+[ "${out}" = "本日の便は終了しました" ] || ng "$LINENO"
 
-if [ "$out" = "$expected" ]; then
-    echo "Test 2 OK: Handled end of service"
-else
-    echo "Test 2 ERROR: Expected '$expected' but got '$out'"
-    exit 1
-fi
-
-# テスト3: ジャストの時刻
+### EXACT TIME TEST ###
 out=$(echo -e "$timetable" | ./CITbus_time 10:00)
-expected="10:00 (あと 0 分)"
+[ "${out}" = "10:00 (あと 0 分)" ] || ng "$LINENO"
 
-if [ "$out" = "$expected" ]; then
-    echo "Test 3 OK: Handled exact time match"
-else
-    echo "Test 3 ERROR: Expected '$expected' but got '$out'"
-    exit 1
-fi
+[ "$res" = 0 ] && echo OK
 
-echo "All tests passed successfully."
+exit $res
