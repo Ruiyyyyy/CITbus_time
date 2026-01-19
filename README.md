@@ -32,26 +32,26 @@ $ chmod +x CITbus_time
 時刻データは必ず00:00~23:59の間で入力してください
 
 ```bash
-$ cat tudanuma_bus.txt | ./CITbus_time
+$ echo tudanuma_bus.txt | ./CITbus_time
 10:35 (あと 25分)
 
 ```
 
 ```bash
-$ cat sinnarasino_bus.txt | ./CITbus_time
+$ echo sinnarasino_bus.txt | ./CITbus_time
 10:15 (あと 10分)
 ```
 
 引数に時刻(HH:MM)を指定するとその時刻から最も近い次の便を表示します。
 
 ```bash
-$ cat tudanuma_bus.txt | ./CITbus_time 10:00
+$ echo tudanuma_bus.txt | ./CITbus_time 10:00
 10:35 (あと 35 分)
 ```
 
 
 ```bash
-$ cat innarasino_bus.txt | ./CITbus_time 10:00
+$ echo innarasino_bus.txt | ./CITbus_time 10:00
 10:35 (あと 15分)
 ```
 
