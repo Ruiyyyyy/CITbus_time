@@ -12,15 +12,15 @@ res=0
 timetable="09:00\n10:00\n10:30\n11:00\n12:00"
 
 ### NORMAL TEST ###
-out=$(echo -e "$timetable" | ./CITbus_time 10:15)
+out=$(echo -e "$timetable" | ./citbus_time 10:15)
 [ "${out}" = "10:30 (あと 15 分)" ] || ng "$LINENO"
 
 ### END OF SERVICE TEST ###
-out=$(echo -e "$timetable" | ./CITbus_time 13:00)
+out=$(echo -e "$timetable" | ./citbus_time 13:00)
 [ "${out}" = "本日の便は終了しました" ] || ng "$LINENO"
 
 ### EXACT TIME TEST ###
-out=$(echo -e "$timetable" | ./CITbus_time 10:00)
+out=$(echo -e "$timetable" | ./citbus_time 10:00)
 [ "${out}" = "10:00 (あと 0 分)" ] || ng "$LINENO"
 
 [ "$res" = 0 ] && echo OK
