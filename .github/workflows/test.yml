@@ -20,5 +20,5 @@ jobs:
         
     - name: Run tests
       run: |
-        chmod +x CITbus_time
-        bash -xv ./test_CITbus_time.bash
+        chmod +x citbus_time
+        bash -xv ./test_citbus_time.bash
